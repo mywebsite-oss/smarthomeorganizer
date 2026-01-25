@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dasbor Smart Home Organizer Indonesia Minimalis</title>
+    <!-- Hapus Tailwind CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        /* CSS Reset dan Variabel */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563EB;
+            --primary-hover: #1d4ed8;
+            --background-light: #f7fafc;
+            --background-dark: #111621;
+            --white: #ffffff;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --slate-custom: #0F172A;
+            --blue-50: #eff6ff;
+            --blue-100: #dbeafe;
+            --amber-50: #fffbeb;
+            --amber-600: #d97706;
+            --emerald-50: #ecfdf5;
+            --emerald-600: #059669;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --shadow-primary-20: rgba(37, 99, 235, 0.2);
+            --radius: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-full: 9999px;
+            --transition: all 0.3s ease;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-light);
+            color: var(--slate-900);
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+            padding-top: 4rem;
+            /* Tambahkan padding untuk header fixed */
+        }
+
+        .dark body {
+            background-color: var(--background-dark);
+            color: var(--slate-100);
+        }
+
+        /* Header - Diperbaiki agar sama dengan index.html */
+        header {
+            position: fixed;
+            /* Diubah dari sticky ke fixed */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            width: 100%;
+            border-bottom: 1px solid #e6eaf0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 0 1.5rem;
+            height: 4rem;
+            /* Tinggi yang sama dengan index.html */
+            display: flex;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            header {
+                padding: 0 5rem;
+            }
+        }
+
+        .dark header {
+            border-color: var(--slate-800);
+            background-color: rgba(17, 22, 33, 0.95);
+        }
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-container {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.375rem;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container .material-symbols-outlined {
+            font-size: 1.25rem;
+        }
+
+        .logo-text {
+            color: var(--slate-custom);
+            font-size: 1.125rem;
+            font-weight: 800;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            white-space: nowrap;
+        }
+
+        .dark .logo-text {
+            color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            flex: 1;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+            }
+        }
+
+        nav a {
+            color: var(--slate-custom);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .dark nav a {
+            color: var(--slate-300);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .header-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            position: relative;
+            font-weight: 700;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -0.25rem;
+            left: 0;
+            width: 100%;
+            height: 0.125rem;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Tombol Primary - sama seperti index.html */
+        .btn-primary {
+            min-width: 100px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            height: 2.5rem;
+            padding: 0 1.5rem;
+            background-color: var(--primary);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 10px 15px -3px var(--shadow-primary-20);
+            transition: background-color 0.2s, transform 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(37, 99, 235, 0.9);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.95);
+        }
+
+        /* User Info */
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-details {
+            text-align: right;
+            display: none;
+        }
+
+        @media (min-width: 640px) {
+            .user-details {
+                display: block;
+            }
+        }
+
+        .user-greeting {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--slate-500);
+        }
+
+        .dark .user-greeting {
+            color: var(--slate-400);
+        }
+
+        .user-name {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--slate-900);
+        }
+
+        .dark .user-name {
+            color: var(--white);
+        }
+
+        .user-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            border: 2px solid rgba(37, 99, 235, 0.2);
+            background-image: url('../assets/user-alex-johnson.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Layout */
+        .layout-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 100vh;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            main {
+                padding: 2.5rem 5rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-title {
+            color: var(--slate-900);
+            font-size: 1.875rem;
+            font-weight: 800;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.25;
+            margin-bottom: 0.5rem;
+        }
+
+        .dark .hero-title {
+            color: var(--white);
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        .hero-subtitle {
+            color: var(--slate-500);
+            font-size: 1.125rem;
+        }
+
+        .dark .hero-subtitle {
+            color: var(--slate-400);
+        }
+
+        /* Stats Cards */
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            width: 100%;
+            max-width: 18rem;
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--slate-100);
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .stat-card {
+                width: auto;
+            }
+        }
+
+        .dark .stat-card {
+            background-color: var(--slate-900);
+            border-color: var(--slate-800);
+        }
+
+        .stat-label {
+            color: var(--slate-500);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .dark .stat-label {
+            color: var(--slate-400);
+        }
+
+        .stat-content {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .stat-value {
+            color: var(--slate-900);
+            font-size: 2.25rem;
+            font-weight: 900;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .dark .stat-value {
+            color: var(--white);
+        }
+
+        .stat-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.125rem 0.5rem;
+            border-radius: var(--radius-full);
+        }
+
+        .badge-amber {
+            color: var(--amber-600);
+            background-color: var(--amber-50);
+        }
+
+        .dark .badge-amber {
+            background-color: rgba(217, 119, 6, 0.1);
+        }
+
+        .badge-primary {
+            color: var(--primary);
+            background-color: var(--blue-50);
+        }
+
+        .dark .badge-primary {
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Dashboard Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 1024px) {
+            .dashboard-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        /* Activity Section */
+        .activity-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title .material-symbols-outlined {
+            color: var(--primary);
+        }
+
+        /* Activity Items */
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--slate-100);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dark .activity-item {
+            background-color: var(--slate-900);
+            border-color: var(--slate-800);
+        }
+
+        .activity-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .icon-blue {
+            background-color: var(--blue-50);
+            color: var(--primary);
+        }
+
+        .dark .icon-blue {
+            background-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .icon-emerald {
+            background-color: var(--emerald-50);
+            color: var(--emerald-600);
+        }
+
+        .dark .icon-emerald {
+            background-color: rgba(5, 150, 105, 0.3);
+        }
+
+        .icon-amber {
+            background-color: var(--amber-50);
+            color: var(--amber-600);
+        }
+
+        .dark .icon-amber {
+            background-color: rgba(217, 119, 6, 0.3);
+        }
+
+        .icon-slate {
+            background-color: var(--slate-100);
+            color: var(--slate-500);
+        }
+
+        .dark .icon-slate {
+            background-color: var(--slate-800);
+            color: var(--slate-400);
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.125rem;
+        }
+
+        .dark .activity-title {
+            color: var(--white);
+        }
+
+        .activity-meta {
+            font-size: 0.75rem;
+            color: var(--slate-400);
+        }
+
+        .activity-item.opacity-80 {
+            opacity: 0.8;
+        }
+
+        /* Quick Access Section */
+        .quick-access-section {
+            margin-top: 1.5rem;
+        }
+
+        .quick-access-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quick-access-title .material-symbols-outlined {
+            color: var(--slate-400);
+        }
+
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .quick-access-item {
+            aspect-ratio: 1/1;
+            border-radius: var(--radius-lg);
+            background-color: var(--slate-200);
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .dark .quick-access-item {
+            background-color: var(--slate-800);
+        }
+
+        .quick-access-item:hover::after {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .quick-access-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s;
+        }
+
+        .item-1 {
+            background-image: url('../assets/quick-access-1.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item-2 {
+            background-image: url('../assets/quick-access-2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item-3 {
+            background-image: url('../assets/quick-access-3.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .item-4 {
+            background-image: url('../assets/quick-access-4.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Utility Classes */
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .items-baseline {
+            align-items: baseline;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-end {
+            justify-content: flex-end;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .gap-1 {
+            gap: 0.25rem;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .gap-3 {
+            gap: 0.75rem;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .gap-6 {
+            gap: 1.5rem;
+        }
+
+        .gap-8 {
+            gap: 2rem;
+        }
+
+        .gap-12 {
+            gap: 3rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-10 {
+            margin-bottom: 2.5rem;
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        .mt-0_5 {
+            margin-top: 0.125rem;
+        }
+
+        .p-5 {
+            padding: 1.25rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .py-10 {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-xs {
+            font-size: 0.75rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .font-extrabold {
+            font-weight: 800;
+        }
+
+        .font-black {
+            font-weight: 900;
+        }
+
+        .leading-tight {
+            line-height: 1.25;
+        }
+
+        .tracking-tight {
+            letter-spacing: -0.025em;
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.1em;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .rounded-full {
+            border-radius: var(--radius-full);
+        }
+
+        .rounded-lg {
+            border-radius: var(--radius);
+        }
+
+        .rounded-xl {
+            border-radius: var(--radius-lg);
+        }
+
+        .rounded-2xl {
+            border-radius: var(--radius-xl);
+        }
+
+        .border {
+            border: 1px solid;
+        }
+
+        .border-2 {
+            border-width: 2px;
+        }
+
+        .border-primary\/20 {
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .shadow-sm {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+        }
+
+        .transition-colors {
+            transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+        }
+
+        .transition-all {
+            transition: var(--transition);
+        }
+
+        .sticky {
+            position: sticky;
+        }
+
+        .top-0 {
+            top: 0;
+        }
+
+        .z-50 {
+            z-index: 50;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .inset-0 {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .aspect-square {
+            aspect-ratio: 1/1;
+        }
+
+        .bg-cover {
+            background-size: cover;
+        }
+
+        .bg-center {
+            background-position: center;
+        }
+
+        .bg-no-repeat {
+            background-repeat: no-repeat;
+        }
+
+        .opacity-80 {
+            opacity: 0.8;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .max-w-1200 {
+            max-width: 1200px;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .md\:flex {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:px-20 {
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .lg\:col-span-2 {
+                grid-column: span 2;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .sm\:block {
+                display: block;
+            }
+
+            .sm\:w-72 {
+                width: 18rem;
+            }
+        }
+
+        /* Logo Image Styling */
+        .logo-container img,
+        .footer-icon img {
+            width: 1.25rem;
+            /* Sesuaikan dengan ukuran ikon sebelumnya */
+            height: 1.25rem;
+            /* Sesuaikan dengan ukuran ikon sebelumnya */
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Hover effect untuk logo */
+        .logo-container:hover img,
+        .footer-icon:hover img {
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        /* Responsive logo (optional) */
+        @media (max-width: 768px) {
+
+            .logo-container img,
+            .footer-icon img {
+                width: 1.1rem;
+                height: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="light">
+    <div class="layout-container">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo-container">
+                        <img src="../assets/logo.png" alt="Logo Smart Home Organizer" class="logo-img">
+                    </div>
+                    <h2 class="logo-text">Smart Home Organizer</h2>
+                </div>
+                <nav class="nav">
+                    <a class="nav-link active" href="dashboard.html">Dasbor</a>
+                    <a class="nav-link" href="items/Items.html">Barang</a>
+                    <a class="nav-link" href="tasks/jadwal.html">Tugas</a>
+                </nav>
+                <div class="header-right">
+                    <div class="user-info">
+                        <div class="user-details">
+                            <p class="user-greeting">Selamat datang kembali</p>
+                            <p class="user-name">Alex Johnson</p>
+                        </div>
+                        <div class="user-avatar"></div>
+                    </div>
+                    <a class="btn-primary" href="../index.html">Keluar</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="hero-section">
+                <h1 class="hero-title">
+                    Halo, Alex. Ini adalah ringkasan hari ini.
+                </h1>
+                <p class="hero-subtitle">Ringkasan singkat rumah Anda hari ini</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <p class="stat-label">TUGAS HARI INI</p>
+                    <div class="stat-content">
+                        <p class="stat-value">4</p>
+                        <span class="stat-badge badge-amber">Perlu perhatian</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">BARANG BARU</p>
+                    <div class="stat-content">
+                        <p class="stat-value">12</p>
+                        <span class="stat-badge badge-primary">24 jam terakhir</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="activity-section">
+                    <div class="section-header">
+                        <h3 class="section-title">
+                            <span class="material-symbols-outlined">history</span>
+                            Aktivitas Terbaru
+                        </h3>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon icon-blue">
+                                <span class="material-symbols-outlined">move_item</span>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Dipindahkan — Kitchen Scale</p>
+                                <p class="activity-meta">14 menit yang lalu • Alex J.</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon icon-emerald">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Selesai — Ganti filter HVAC</p>
+                                <p class="activity-meta">2 jam yang lalu • Sistem</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon icon-amber">
+                                <span class="material-symbols-outlined">notification_important</span>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Ditandai — Charger Hitam</p>
+                                <p class="activity-meta">5 jam yang lalu • Sarah K.</p>
+                            </div>
+                        </div>
+                        <div class="activity-item opacity-80">
+                            <div class="activity-icon icon-slate">
+                                <span class="material-symbols-outlined">add_photo_alternate</span>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Ditambahkan — Set Bor (18V)</p>
+                                <p class="activity-meta">Kemarin • Alex J.</p>
+                            </div>
+                        </div>
+                        <div class="activity-item opacity-80">
+                            <div class="activity-icon icon-slate">
+                                <span class="material-symbols-outlined">edit</span>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Diperbarui — Lokasi Selang Taman</p>
+                                <p class="activity-meta">Kemarin • Sistem</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-access-section">
+                    <h3 class="quick-access-title">
+                        <span class="material-symbols-outlined">explore</span>
+                        Akses Cepat
+                    </h3>
+                    <div class="quick-access-grid">
+                        <div class="quick-access-item item-1"></div>
+                        <div class="quick-access-item item-2"></div>
+                        <div class="quick-access-item item-3"></div>
+                        <div class="quick-access-item item-4"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript untuk interaksi sederhana
+        document.querySelectorAll('.quick-access-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Tambahkan efek klik
+                item.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    item.style.transform = '';
+                }, 200);
+
+                // Simulasi navigasi
+                alert('Fitur akses cepat akan mengarahkan Anda ke halaman yang sesuai.');
+            });
+        });
+
+        // Efek scroll untuk header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

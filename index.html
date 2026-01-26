@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Smart Home Organizer - Atur Rumah Anda Lebih Cerdas</title>
-    <!-- Hapus Tailwind -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
         rel="stylesheet" />
@@ -13,7 +12,6 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <style>
-        /* CSS Reset dan Variabel */
         * {
             margin: 0;
             padding: 0;
@@ -62,7 +60,6 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
 
-        /* Font Family */
         body {
             font-family: 'Inter', sans-serif;
             color: var(--slate-custom);
@@ -78,13 +75,11 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* Dark Mode */
         .dark body {
             background-color: var(--background-dark);
             color: var(--white);
         }
 
-        /* Layout Utama */
         body {
             min-height: 100vh;
             display: flex;
@@ -100,7 +95,6 @@
             align-items: center;
         }
 
-        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -161,7 +155,6 @@
             color: var(--white);
         }
 
-        /* Navigation */
         nav {
             display: none;
             align-items: center;
@@ -217,7 +210,6 @@
             border-radius: 2px;
         }
 
-        /* Buttons */
         .btn-primary {
             min-width: 100px;
             cursor: pointer;
@@ -259,7 +251,6 @@
             transform: translateY(-0.125rem);
         }
 
-        /* Hero Section */
         .hero-section {
             max-width: 1280px;
             width: 100%;
@@ -377,7 +368,6 @@
             color: var(--slate-300);
         }
 
-        /* Hero Image Container */
         .hero-image-container {
             order: 1;
         }
@@ -1293,27 +1283,21 @@
             }
         }
 
-        /* Logo Image Styling */
         .logo-container img,
         .footer-icon img {
             width: 1.25rem;
-            /* Sesuaikan dengan ukuran ikon sebelumnya */
             height: 1.25rem;
-            /* Sesuaikan dengan ukuran ikon sebelumnya */
             object-fit: contain;
             display: block;
         }
 
-        /* Hover effect untuk logo */
         .logo-container:hover img,
         .footer-icon:hover img {
             opacity: 0.9;
             transition: opacity 0.2s;
         }
 
-        /* Responsive logo (optional) */
         @media (max-width: 768px) {
-
             .logo-container img,
             .footer-icon img {
                 width: 1.1rem;
@@ -1510,3 +1494,4 @@
 
 
 </html>
+

@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <style>
-        /* CSS Reset dan Variabel - SAMA PERSIS dengan index.html */
+
         * {
             margin: 0;
             padding: 0;
@@ -61,7 +61,6 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
 
-        /* Font Family - SAMA dengan index.html */
         body {
             font-family: 'Inter', sans-serif;
             color: var(--slate-custom);
@@ -81,13 +80,11 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* Dark Mode - SAMA dengan index.html */
         .dark body {
             background-color: var(--background-dark);
             color: var(--white);
         }
 
-        /* Layout Utama - SAMA dengan index.html */
         .main-container {
             flex: 1;
             display: flex;
@@ -95,7 +92,6 @@
             align-items: center;
         }
 
-        /* HEADER - SAMA PERSIS dengan index.html */
         header {
             position: sticky;
             top: 0;
@@ -154,7 +150,6 @@
             color: var(--white);
         }
 
-        /* Navigation - SAMA dengan index.html */
         nav {
             display: none;
             align-items: center;
@@ -253,7 +248,6 @@
             transform: translateY(-0.125rem);
         }
 
-        /* HERO SECTION - Layout SAMA dengan index.html */
         .hero-section {
             max-width: 1280px;
             width: 100%;
@@ -338,7 +332,6 @@
             color: var(--slate-400);
         }
 
-        /* Hero Image Container */
         .hero-image-container {
             order: 1;
         }
@@ -350,7 +343,6 @@
             }
         }
 
-        /* MAIN CONTENT SECTIONS - Konsisten dengan index.html */
         .section-container {
             width: 100%;
             max-width: 1280px;
@@ -364,7 +356,6 @@
             }
         }
 
-        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -398,7 +389,6 @@
             box-shadow: none;
         }
 
-        /* FOOTER - SAMA PERSIS dengan index.html */
         footer {
             width: 100%;
             padding: 4rem 1.5rem;
@@ -495,12 +485,6 @@
             color: var(--slate-500);
         }
 
-        /* ============================================
-           STYLE KHUSUS UNTUK KONTEN landingpage.html
-           (tidak mengubah layout, hanya styling konten)
-           ============================================ */
-
-        /* Hero Image khusus untuk landing page */
         .image-glow {
             position: absolute;
             inset: -1rem;
@@ -543,7 +527,6 @@
             background-position: center;
         }
 
-        /* Section Styles untuk konten landing page */
         .section-title-custom {
             font-size: 1.875rem;
             font-weight: 800;
@@ -573,7 +556,6 @@
             margin-top: 0.5rem;
         }
 
-        /* Feature List */
         .feature-list {
             list-style: none;
             font-size: 0.875rem;
@@ -599,7 +581,6 @@
             flex-shrink: 0;
         }
 
-        /* Benefit Items */
         .benefit-item {
             display: flex;
             align-items: flex-start;
@@ -638,7 +619,6 @@
             color: var(--slate-400);
         }
 
-        /* User Tags */
         .user-tags {
             display: flex;
             flex-wrap: wrap;
@@ -661,7 +641,6 @@
             color: var(--white);
         }
 
-        /* Team Cards */
         .team-container {
             display: flex;
             flex-wrap: wrap;
@@ -722,7 +701,6 @@
             margin-top: 0.125rem;
         }
 
-        /* Tim Pengembang - Kartu Lebih Besar */
         .team-container.justify-center {
             justify-content: center;
         }
@@ -731,25 +709,18 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            /* Diperbesar dari 0.75rem */
             background-color: var(--white);
             border: 1px solid var(--slate-300);
             padding: 1.25rem;
-            /* Diperbesar dari 0.75rem */
             border-radius: var(--radius-xl);
-            /* Diperbesar dari var(--radius-lg) */
             padding-right: 2rem;
-            /* Diperbesar dari 1.5rem */
             transition: all 0.2s;
             min-width: 300px;
-            /* Lebar minimum ditambah */
         }
 
         .team-avatar {
             width: 3.5rem;
-            /* Diperbesar dari 2.5rem */
             height: 3.5rem;
-            /* Diperbesar dari 2.5rem */
             border-radius: 50%;
             background-color: rgba(37, 99, 235, 0.1);
             display: flex;
@@ -757,10 +728,8 @@
             justify-content: center;
             overflow: hidden;
             border: 2px solid var(--primary);
-            /* Border ditambahkan */
         }
 
-        /* Ganti ikon dengan gambar */
         .team-avatar img {
             width: 100%;
             height: 100%;
@@ -768,31 +737,24 @@
             border-radius: 50%;
         }
 
-        /* Hapus ikon material jika menggunakan gambar */
         .team-avatar .material-symbols-outlined {
             display: none;
         }
 
         .team-info p:first-child {
             font-size: 1.125rem;
-            /* Diperbesar dari 0.875rem */
             font-weight: 800;
-            /* Diperbesar dari 700 */
             color: var(--slate-custom);
         }
 
         .team-info p:last-child {
             font-size: 0.75rem;
-            /* Diperbesar dari 0.625rem */
             color: var(--slate-500);
             font-weight: 600;
-            /* Diperbesar dari 500 */
             text-transform: uppercase;
             margin-top: 0.25rem;
-            /* Diperbesar dari 0.125rem */
         }
 
-        /* Data Link */
         .data-link {
             font-size: 0.75rem;
             font-weight: 500;
@@ -807,7 +769,6 @@
             color: var(--primary);
         }
 
-        /* Utility Classes */
         .flex {
             display: flex;
         }
@@ -939,7 +900,6 @@
             margin-right: auto;
         }
 
-        /* Responsive */
         @media (min-width: 768px) {
             .md\:flex-row {
                 flex-direction: row;
@@ -961,25 +921,20 @@
             }
         }
 
-        /* Logo Image Styling */
         .logo-container img,
         .footer-icon img {
             width: 1.25rem;
-            /* Sesuaikan dengan ukuran ikon sebelumnya */
             height: 1.25rem;
-            /* Sesuaikan dengan ukuran ikon sebelumnya */
             object-fit: contain;
             display: block;
         }
 
-        /* Hover effect untuk logo */
         .logo-container:hover img,
         .footer-icon:hover img {
             opacity: 0.9;
             transition: opacity 0.2s;
         }
 
-        /* Responsive logo (optional) */
         @media (max-width: 768px) {
 
             .logo-container img,
@@ -993,7 +948,6 @@
 
 <body class="light">
     <div class="relative min-h-screen flex-col overflow-x-hidden">
-        <!-- HEADER - SAMA PERSIS dengan index.html -->
         <header class="sticky top-0 z-50">
             <div class="header-content">
                 <div class="header-left">
@@ -1022,7 +976,6 @@
         </header>
 
         <main class="main-container">
-            <!-- HERO SECTION - Layout sama dengan index.html -->
             <section class="hero-section">
                 <div class="hero-grid">
                     <div class="hero-content">
@@ -1054,7 +1007,6 @@
                 </div>
             </section>
 
-            <!-- CONTENT SECTIONS - Layout konsisten dengan index.html -->
             <section class="section-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div>
@@ -1160,7 +1112,6 @@
                 <div class="team-container justify-center mt-8">
                     <div class="team-card">
                         <div class="team-avatar">
-                            <!-- Ganti dengan gambar Anda -->
                             <img src="assets/landingpage_tim.png" alt="Luqman Zahid A.">
                         </div>
                         <div class="team-info">
@@ -1178,7 +1129,6 @@
             </section>
         </main>
 
-        <!-- FOOTER - SAMA PERSIS dengan index.html -->
         <footer class="py-16">
             <div class="footer-container">
                 <div class="footer-logo">
@@ -1203,3 +1153,4 @@
 
 
 </html>
+

@@ -6,9 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Smart Home Organizer - Landing Page Minimalis</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <style>
@@ -62,7 +59,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--slate-custom);
             background-color: var(--background-light);
             transition: background-color 0.2s, color 0.2s;
@@ -73,11 +70,11 @@
         }
 
         .font-display {
-            font-family: 'Inter', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         .font-heading {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         .dark body {
@@ -142,7 +139,7 @@
             color: var(--slate-custom);
             font-size: 1.125rem;
             font-weight: 800;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             white-space: nowrap;
         }
 
@@ -294,7 +291,7 @@
             color: var(--slate-custom);
             font-size: 2.25rem;
             font-weight: 800;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.15;
             letter-spacing: -0.025em;
             margin-bottom: 1rem;
@@ -530,7 +527,7 @@
         .section-title-custom {
             font-size: 1.875rem;
             font-weight: 800;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--slate-custom);
             margin-bottom: 1rem;
         }
@@ -756,12 +753,12 @@
         }
 
         .data-link {
-            font-size: 0.75rem;
+            font-size: 1rem;
             font-weight: 500;
             color: var(--slate-500);
             text-decoration: none;
             transition: color 0.2s;
-            font-family: 'Inter', sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             letter-spacing: -0.025em;
         }
 
@@ -961,16 +958,8 @@
                 <nav class="nav">
                     <a class="text-sm font-semibold hover:text-primary transition-colors nav-link active"
                         href="#landingpage.html">Landing Page</a>
-                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#index.html">Beranda</a>
-                    <a class="text-sm font-semibold hover:text-primary transition-colors"
-                        href="#before_login/about.html">Tentang Kami</a>
-                    <a class="text-sm font-semibold hover:text-primary transition-colors"
-                        href="#before_login/help.html">Bantuan</a>
                 </nav>
                 <div class="header-right">
-                    <a class="btn-primary" href="#before_login/login.html">
-                        <span>Masuk</span>
-                    </a>
                 </div>
             </div>
         </header>
@@ -985,17 +974,11 @@
                                 <span class="text-primary">Kelola rumah lebih rapi.</span>
                             </h1>
                             <p class="hero-description">
-                                Kelola rumah dengan sistem cerdas untuk keteraturan maksimal. Tidak ada lagi waktu
-                                terbuang
-                                untuk mencari kunci atau dokumen penting.
+                                Ini adalah proyek pengembangan web sederhana yang bertujuan untuk mempermudah
+                                pekerjaan rumah dan pencarian barang.
                             </p>
                         </div>
-                        <div class="flex flex-col gap-3 mt-8">
-                            <a class="btn-primary btn-large" href="#before_login/login.html">
-                                <span>Coba Sekarang — Masuk</span>
-                                <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span>
-                            </a>
-                        </div>
+
                     </div>
                     <div class="hero-image-container">
                         <div class="image-wrapper">
@@ -1032,17 +1015,16 @@
                 <div class="features-grid mt-8">
                     <div class="feature-card">
                         <span class="material-symbols-outlined"
-                            style="color: var(--primary); font-size: 1.875rem; margin-bottom: 1rem;">search</span>
+                        style="color: var(--primary); font-size: 1.875rem; margin-bottom: 1rem;">search</span>
                         <h3 class="text-xl font-bold mb-3">Pelacakan Barang</h3>
                         <ul class="feature-list space-y-2">
                             <li><span class="list-dot"></span> Lokasi barang instan</li>
                             <li><span class="list-dot"></span> Foto &amp; kategori item</li>
-                            <li><span class="list-dot"></span> Pengingat peminjaman</li>
                         </ul>
                     </div>
                     <div class="feature-card">
                         <span class="material-symbols-outlined"
-                            style="color: var(--emerald-600); font-size: 1.875rem; margin-bottom: 1rem;">task_alt</span>
+                        style="color: var(--emerald-600); font-size: 1.875rem; margin-bottom: 1rem;">task_alt</span>
                         <h3 class="text-xl font-bold mb-3">Manajemen Tugas</h3>
                         <ul class="feature-list space-y-2">
                             <li><span class="list-dot"></span> Daftar tugas harian</li>
@@ -1052,7 +1034,7 @@
                     </div>
                     <div class="feature-card">
                         <span class="material-symbols-outlined"
-                            style="color: var(--purple-600); font-size: 1.875rem; margin-bottom: 1rem;">group_add</span>
+                        style="color: var(--purple-600); font-size: 1.875rem; margin-bottom: 1rem;">group_add</span>
                         <h3 class="text-xl font-bold mb-3">Pembagian Otomatis</h3>
                         <ul class="feature-list space-y-2">
                             <li><span class="list-dot"></span> Distribusi tugas adil</li>
@@ -1064,6 +1046,7 @@
             </section>
 
             <section class="section-container">
+                <h3 class="section-subtitle text-center">Manfaat Utama</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="benefit-item">
                         <div class="benefit-icon">
@@ -1151,7 +1134,4 @@
     </div>
 </body>
 
-
 </html>
-
-
